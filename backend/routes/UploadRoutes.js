@@ -1,6 +1,13 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const multer = require("multer");
+const cors = require("cors");
+const path = require("path");
+const bcrypt = require("bcryptjs");
+const app = express();
+const jwt = require("jsonwebtoken");
 const cloudinary = require("cloudinary").v2;
+
 const router = express.Router();
 
 // Cloudinary config

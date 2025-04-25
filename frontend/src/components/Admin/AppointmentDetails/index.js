@@ -96,10 +96,12 @@ export default function AppointmentDetails() {
         }
       );
       setIsLoading(false);
+      addNotification("Status Updated Successfully!");
       if (!response.ok) throw new Error("Failed to update appointment status");
-      addNotification("Failed to update appointment status");
+      
       // Update local state if the request is successful
     } catch (error) {
+      addNotification("Failed to update appointment status");
       setIsLoading(false);
       // setError("Failed to update appointment status. Please try again later.");
     }

@@ -6,6 +6,7 @@ import { jwtDecode } from "jwt-decode";
 import "./doctors.css";
 import Header from "../../Header";
 import Loader from "../../Loader";
+import Footer from "../../Footer";
 import { useNotification } from "../../../context/NotificationContext";
 
 export default function AvailableDoctors() {
@@ -393,6 +394,7 @@ export default function AvailableDoctors() {
           </div>
         )}
       </div>
+      <Footer/>
     </>
   );
 }

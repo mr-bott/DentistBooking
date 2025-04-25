@@ -34,7 +34,7 @@ const Footer = () => {
         <div className="footer-sections">
          
           <div className="footer-brand">
-            <h2>AGRO FX</h2>
+            <h2>OralVis HealthCare</h2>
             <p>
               lorem1 ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor 

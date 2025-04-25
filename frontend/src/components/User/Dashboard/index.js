@@ -1,7 +1,7 @@
 import React from "react";
 import "./homepage.css";
 import Header from "../../Header";
-// import Footer from "../../Footer";
+import Footer from "../../Footer";
 
 export default function AppointmentHomePage() {
   return (
@@ -71,27 +71,7 @@ export default function AppointmentHomePage() {
           </div>
         </div>
         
-        <footer className="app-footer">
-          <div className="footer-content">
-            <div className="footer-logo">MediBook</div>
-            <div className="footer-links">
-              <ul>
-                <li>About Us</li>
-                <li>Contact</li>
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
-              </ul>
-            </div>
-            <div className="footer-social">
-              <div className="social-icon">📱</div>
-              <div className="social-icon">💻</div>
-              <div className="social-icon">📘</div>
-            </div>
-          </div>
-          <div className="footer-copyright">
-            © 2025 MediBook. All rights reserved.
-          </div>
-        </footer>
+       <Footer/>
       </div>
     </>
   );
