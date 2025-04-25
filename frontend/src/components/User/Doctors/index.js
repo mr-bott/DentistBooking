@@ -207,7 +207,7 @@ export default function AvailableDoctors() {
           <p>Choose from our specialists and book your appointment</p>
         </header>
 
-        <div className="filters-section">
+        {/* <div className="filters-section">
           <div className="filter-item">
             <label htmlFor="specialty">Specialty</label>
             <select
@@ -217,9 +217,9 @@ export default function AvailableDoctors() {
               onChange={handleFilterChange}
             >
               <option value="">All Specialties</option>
-              {/* {specialties.map((specialty, index) => (
+               {specialties.map((specialty, index) => (
               <option key={index} value={specialty}>{specialty}</option>
-            ))} */}
+            ))} 
             </select>
           </div>
 
@@ -233,7 +233,7 @@ export default function AvailableDoctors() {
               onChange={handleFilterChange}
             />
           </div>
-        </div>
+        </div> */}
 
         <div className="doctors-list">
           {filteredDoctors.length > 0 ? (

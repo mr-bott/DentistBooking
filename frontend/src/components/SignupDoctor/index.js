@@ -1,10 +1,9 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./signup.css";
 import Loader from "../Loader";
 
-const SignUp = () => {
+const SignUpDoctor = () => {
   const [step, setStep] = useState(1); // 1: form, 2: enter OTP
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -71,7 +70,7 @@ const SignUp = () => {
         return;
       }
 
-      const signupRes = await fetch(`${url}/api/register/patient`, {
+      const signupRes = await fetch(`${url}/api/register/dentist`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password}),
@@ -196,4 +195,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUpDoctor;

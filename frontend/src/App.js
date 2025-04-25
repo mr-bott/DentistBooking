@@ -7,6 +7,7 @@ import { NotificationProvider } from "./context/NotificationContext";
 import NotificationManager from "./components/NotificationManager";
 
 import SignUp from "./components/SignUp";
+import SignUpDoctor from "./components/SignupDoctor/index.js";
 import Login from "./components/Login";
 import ProtectedRoute from "./components/ProtectedRoutes";
 import Dashboard from "./components/Admin/DashBoard/index.js";
@@ -27,6 +28,7 @@ class App extends Component {
           <Routes>
             <Route path="/" element={<ProtectedRoute />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/signup/doctor" element={<SignUpDoctor/>} />
             <Route path="/login" element={<Login />} />
             <Route
               path="/patient/dashboard"
