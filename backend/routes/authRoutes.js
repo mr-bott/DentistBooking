@@ -1,4 +1,14 @@
+
 const express = require("express");
+const mongoose = require("mongoose");
+const multer = require("multer");
+const cors = require("cors");
+const path = require("path");
+const bcrypt = require("bcryptjs");
+const app = express();
+const jwt = require("jsonwebtoken");
+const cloudinary = require("cloudinary");
+
 const Patient = require("../models/Patient");
 const Dentist = require("../models/Dentist");
 const Checkup = require("../models/Checkup");
