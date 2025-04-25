@@ -20,10 +20,32 @@ export default function DoctorDashboard() {
   const token = Cookies.get("jwt_token");
   const decoded = jwtDecode(token);
   const userId = decoded.userId;
-
+const[personal,setPersonal]=useState([]);
   const [appointments, setAppointments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  useEffect(() => {
+    fetchDoctor();
+  }, []);
+
+  const fetchDoctor = async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const URL = `${process.env.REACT_APP_BACKEND_URL}/api/dentist/${userId}`;
+      const response = await fetch(URL);
+      if (!response.ok) throw new Error(`Error: ${response.status}`);
+      const data = await response.json();
+      setPersonal(data);
+  
+    } catch (error) {
+      setIsLoading(false);
+    
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
 
   useEffect(() => {
     fetchAppointments();
@@ -102,7 +124,7 @@ export default function DoctorDashboard() {
       <header className="a_dashboard-header">
         <div className="header-info">
           <h1 className="a_dashboard-title">Welcome back,</h1>
-          <p className="a_dashboard-subtitle"> Dr. Smith</p>
+          <p className="a_dashboard-subtitle"> Dr. {personal?.name||"Doctor"}</p>
         </div>
         <div className="header-actions">
           <div className="notification-bell">
@@ -115,7 +137,7 @@ export default function DoctorDashboard() {
               alt="Doctor profile"
               className="profile-image"
             /> */}
-            <span className="doctor-name">Dr. Smith</span>
+            <span className="doctor-name">Dr.{personal?.name||"Doctor"}</span>
             <ChevronDown size={16} />
           </div>
         </div>
