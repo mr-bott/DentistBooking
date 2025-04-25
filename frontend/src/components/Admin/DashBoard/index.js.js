@@ -11,6 +11,7 @@ import {
 import Loader from '../../Loader';
 import './Dashboard.css'; 
 import DoctorDashboard from '../RecentAppointments';
+import DoctorAppointements from '../Appointments';
 import HospitalDoctors from '../Doctors';
 export default function Dashboard() {
   const token = Cookies.get("jwt_token");
@@ -72,7 +73,7 @@ export default function Dashboard() {
 
   const renderMainContent = () => {
     if (activeTab === 'Appointments') {
-         return <DoctorDashboard />;
+         return <DoctorAppointements/>;
     } else if (activeTab === 'Doctors') {
       return <HospitalDoctors/>;
     } else {

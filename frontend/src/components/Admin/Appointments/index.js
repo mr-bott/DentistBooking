@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import "./appointments.css"
 
-export default function DoctorDashboard() {
+export default function DoctorAppointements() {
   const token = Cookies.get("jwt_token");
   const decoded = jwtDecode(token);
   const userId = decoded.userId;
@@ -299,6 +299,89 @@ if (isLoading) {
             ) : (
               <div className="empty-state">
                 <p>No pending appointments for today.</p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Other sections */}
+      </div>
+
+      <div className="a_dashboard-content">
+        <div className="section appointments-section">
+          <div className="section-header">
+            <h2 className="section-title">Rejected Appointments</h2>
+            <div className="search-container">
+              <Search size={16} />
+              <input
+                type="text"
+                placeholder="Search patients..."
+                className="search-input"
+              />
+            </div>
+          </div>
+
+          <div className="appointment-cards">
+            {rejectedAppointments.length > 0 ? (
+              rejectedAppointments.map((appointment) => (
+                <Link
+                  to={`/appointment-details/${appointment._id} `}
+                  className="logo-link"
+                >
+                  <div key={appointment._id} className="appointment-card">
+                    <div className="patient-header">
+                      <div className="patient-info">
+                        <h3 className="patient-name">
+                          {appointment.patientId.name}
+                        </h3>
+                        <div className="appointment-time">
+                          <Calendar size={14} />
+                          <span>
+                            {new Date(
+                              appointment.scheduledTime
+                            ).toLocaleDateString()}
+                          </span>
+                          <Clock size={14} />
+                          <span>
+                            {new Date(
+                              appointment.scheduledTime
+                            ).toLocaleTimeString()}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="appointment-details">
+                      <div className="detail-item">
+                        <MessageSquare size={14} />
+                        <span>Status: {appointment.status}</span>
+                      </div>
+                      <div className="detail-item">
+                        <MapPin size={14} />
+                        <span>Location: Dentist Office</span>
+                      </div>
+                    </div>
+
+                    <div className="action-buttons">
+                      {/* <button
+                        className="accept-button"
+                      >
+                        <CheckCircle size={16} />
+                        ADD Preceptions
+                      </button> */}
+                      <button
+                      className="reject-button"
+                    >
+                      <XCircle size={16} />
+                      Rejected
+                    </button>
+                    </div>
+                  </div>
+                </Link>
+              ))
+            ) : (
+              <div className="empty-state">
+                <p>No Rejected appointments for today.</p>
               </div>
             )}
           </div>
