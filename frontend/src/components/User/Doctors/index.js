@@ -240,11 +240,11 @@ export default function AvailableDoctors() {
             filteredDoctors.map((doctor) => (
               <div key={doctor.id} className="doctor-card">
                 <div className="doctor-info">
-                  <img
+                  {/* <img
                     src={doctor.image}
                     alt={doctor.name}
                     className="doctor-image"
-                  />
+                  /> */}
                   <div className="doctor-details">
                     <h2>{doctor.name}</h2>
                     <div className="doctor-specialty">{doctor.specialty}</div>

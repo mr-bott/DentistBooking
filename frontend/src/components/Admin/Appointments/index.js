@@ -108,11 +108,11 @@ if (isLoading) {
             <span className="notification-badge">3</span>
           </div>
           <div className="user-profile">
-            <img
+            {/* <img
               src="/api/placeholder/32/32"
               alt="Doctor profile"
               className="profile-image"
-            />
+            /> */}
             <span className="doctor-name">Dr. Smith</span>
             <ChevronDown size={16} />
           </div>

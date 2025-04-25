@@ -250,11 +250,11 @@ export default function AppointmentDetails() {
       <div className="appointment-content">
         <div className="patient-info-section">
           <div className="patient-profile">
-            <img
+            {/* <img
               src={appointment.patientImage}
               alt={appointment.patientName}
               className="patient-avatar"
-            />
+            /> */}
             <div className="patient-details">
               <h2>{appointment.patientName}</h2>
               <div className="patient-metadata">
