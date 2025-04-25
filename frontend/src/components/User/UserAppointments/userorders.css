@@ -89,6 +89,26 @@
   color: #10b981;
 }
 
+.details-images-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.details-image-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem;
+  max-width: 150px;
+}
+
+.details-image-item img {
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
 /* Error Message */
 .error-message {
   color: red;

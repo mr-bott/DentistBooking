@@ -4,20 +4,18 @@ import { jwtDecode } from "jwt-decode";
 import Header from "../../Header";
 import Footer from "../../Footer";
 import Loader from "../../Loader";
-import "./userorders.css"; 
+import "./userorders.css";
 import { useNotification } from "../../../context/NotificationContext";
 
 const UserCheckups = () => {
-  
-const { addNotification } = useNotification();
-
+  const { addNotification } = useNotification();
 
   const token = Cookies.get("jwt_token");
   const decoded = jwtDecode(token);
   const userId = decoded.userId;
 
   const [isLoading, setIsLoading] = useState(true);
- 
+
   const [checkups, setCheckups] = useState([]);
 
   useEffect(() => {
@@ -30,10 +28,9 @@ const { addNotification } = useNotification();
     try {
       const URL = `${process.env.REACT_APP_BACKEND_URL}/api/checkups/patient/${userId}`;
       const response = await fetch(URL);
-      addNotification('Detailsd fetched successfully!');
+      addNotification("Detailsd fetched successfully!");
       if (!response.ok) throw new Error(`Error: ${response.status}`);
       const data = await response.json();
-
       const transformedCheckups = data.map((item) => ({
         id: item._id,
         dentistName: item.dentistId?.name || "Unknown",
@@ -42,19 +39,20 @@ const { addNotification } = useNotification();
         scheduledTime: new Date(item.scheduledTime).toLocaleString(),
         createdAt: new Date(item.createdAt).toLocaleDateString(),
         status: item.status.charAt(0).toUpperCase() + item.status.slice(1),
+        images: item.images || [], // <-- Add this line
       }));
 
       setCheckups(transformedCheckups);
     } catch (error) {
-      addNotification('Failed to fetch checkup appointments. Please try again later.!');
-    
+      addNotification(
+        "Failed to fetch checkup appointments. Please try again later.!"
+      );
     } finally {
       setIsLoading(false);
     }
   };
 
   if (isLoading) return <Loader />;
-
 
   return (
     <>
@@ -91,9 +89,29 @@ const { addNotification } = useNotification();
 
                 <div className="details-info-section">
                   <h3>Status</h3>
-                  <div className={`details-status ${checkup.status.toLowerCase()}`}>
+                  <div
+                    className={`details-status ${checkup.status.toLowerCase()}`}
+                  >
                     {checkup.status}
                   </div>
+                </div>
+                <div className="details-info-section">
+                  <h3>Images</h3>
+                  {checkup.images.length > 0 ? (
+                    <div className="details-images-container">
+                      {checkup.images.map((img, index) => (
+                        <div key={index} className="details-image-item">
+                          <img
+                            src={img.image}
+                            alt={`Checkup Image ${index + 1}`}
+                          />
+                          <p>{img.note}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p>No images available</p>
+                  )}
                 </div>
               </div>
             </div>

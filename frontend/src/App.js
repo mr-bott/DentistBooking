@@ -2,10 +2,8 @@ import { Component } from "react";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-
 import { NotificationProvider } from "./context/NotificationContext";
 import NotificationManager from "./components/NotificationManager";
-
 import SignUp from "./components/SignUp";
 import SignUpDoctor from "./components/SignupDoctor/index.js";
 import Login from "./components/Login";
@@ -19,6 +17,7 @@ import AppointmentDetails from "./components/Admin/AppointmentDetails/index.js";
 import AvailableDoctors from "./components/User/Doctors/index.js";
 class App extends Component {
   render() {
+
     return (
       <NotificationProvider>
         <Router>
