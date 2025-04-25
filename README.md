@@ -3,20 +3,20 @@
 
 A fully developed and feature-rich appointment booking platform designed specifically for dental clinics. It allows patients to easily book appointments with dentists, manage their profiles, and receive real-time notifications. The platform also provides an Doctor panel for managing users, appointments, and clinic schedules.
 
-## 🔗 LIVE LINK: [https://your-dental-app.vercel.app](https://your-dental-app.vercel.app)
+## 🔗 LIVE LINK: [https://dentist-booking-liart.vercel.app/](https://dentist-booking-liart.vercel.app/)
 
 ---
 
 ## 🧪 Credentials
 
-### 👨‍⚕️ Admin:
-- **Email**: admin@gmail.com  
-- **Password**: Svcet@24
+### 👨‍⚕️ Doctor:
+- **Email**: muralikrishna8309@gmail.com
+- **Password**: murali@24
 
 ### 👤 User:
 - **Create your own account**, or  
 - **Demo Email**: demo@gmail.com  
-- **Password**: Svcet@24
+- **Password**: demo@24
 
 ---
 
