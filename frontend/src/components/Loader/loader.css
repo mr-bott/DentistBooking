@@ -1,0 +1,39 @@
+
+.loader-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100vw;
+    height: 100vh;
+    background-color: transparent;
+  }
+  
+  .bar-main {
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background-color:black;;
+    border-radius: 10px;
+    animation: scale-up4 1s linear infinite;
+  }
+  
+  .bar-main:nth-child(2) {
+    height: 35px;
+    margin: 0 5px;
+    animation-delay: .25s;
+  }
+  
+  .bar-main:nth-child(3) {
+    animation-delay: .5s;
+  }
+  
+  @keyframes scale-up4 {
+    20% {
+      background-color: #ffff;
+      transform: scaleY(1.5);
+    }
+  
+    40% {
+      transform: scaleY(1);
+    }
+  }

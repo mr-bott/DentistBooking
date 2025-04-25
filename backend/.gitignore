@@ -1,0 +1,24 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment variables
+.env
+
+# Logs
+logs/
+*.log
+
+# OS-related files
+.DS_Store
+Thumbs.db
+
+# Optional: remove this if you want to keep local editor settings
+.vscode/
+
+# Subdirectories to ignore (only if needed)
+# Uncomment if you want to ignore vegfro or vegbak
+# vegbak/
+# vegfro/
