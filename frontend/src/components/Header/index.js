@@ -73,18 +73,13 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/products" className="logo-link">
-              Products
+            <Link to="/available/doctors" className="logo-link">
+             Book Your Slot
             </Link>
           </li>
           <li>
-            <Link to="/my-orders" className="logo-link">
-              Orders
-            </Link>
-          </li>
-          <li>
-            <Link to="/cart" className="logo-link">
-              Cart
+            <Link to="/patient/appointments" className="logo-link">
+              My Appointments
             </Link>
           </li>
           <li onClick={() => logout()}   className="logout-btn">LogOut</li>

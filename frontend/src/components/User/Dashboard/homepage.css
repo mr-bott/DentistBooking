@@ -72,6 +72,23 @@
     background-color: #f0f7ff;
     min-height: 500px;
   }
+  @media   screen and (max-width:786px) {
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 50px;
+      position: relative;
+      overflow: hidden;
+      background-color: #f0f7ff;
+      min-height: 500px;
+    }
+    .specialties-illustration{
+      display: none;
+    }
+    
+  }
   
   .main-title {
     font-size: 48px;

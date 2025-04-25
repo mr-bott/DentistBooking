@@ -1,9 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./homepage.css";
 import Header from "../../Header";
 import Footer from "../../Footer";
 
 export default function AppointmentHomePage() {
+  const navigate=useNavigate()
+  const handlebooknow=()=>{
+      return navigate("/available/doctors")
+  }
   return (
     <>
       <div className="home-container">
@@ -21,7 +26,7 @@ export default function AppointmentHomePage() {
             your visit with just a few clicks.
           </p>
           <a href="/available/doctors" className="book-now-link">
-            <button className="book-now-button">Book Now</button>
+            <button className="book-now-button" onClick={()=>handlebooknow()}>Book Now</button>
           </a>
 
           <div className="specialties-illustration">
