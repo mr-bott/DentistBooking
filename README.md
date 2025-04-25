@@ -95,6 +95,13 @@ EMAIL_USER=your_email@example.com
 EMAIL_PASS=your_email_password
 ```
 
+
+**Example for `.env` in frontend:**
+```env
+REACT_APP_BACKEND_URL=http://localhost:5000
+
+```
+
 ---
 
 ### ▶️ Run the Project
