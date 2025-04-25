@@ -8,8 +8,9 @@ A fully developed and feature-rich appointment booking platform designed specifi
 ---
 
 ## 🧪 Credentials
-
-### 👨‍⚕️ Doctor:
+### 👨‍⚕️ Doctor  :- 
+Can be created at :->  https://dentist-booking-liart.vercel.app/signup/doctor
+### 👨‍⚕️ Doctor(Demo):
 - **Email**: muralikrishna8309@gmail.com
 - **Password**: murali@24
 
